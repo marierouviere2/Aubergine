@@ -5,6 +5,7 @@ import com.example.aubergine.model.RestAOEResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import android.content.Intent;
 import android.util.Log;
 
 
@@ -26,8 +27,8 @@ public class MainController {
             instance = new MainController(MyActivity);
         }
         return instance;
-
     }
+
     public MainController(MyActivity MyActivity) {
         this.MyActivity = MyActivity;
     }
@@ -35,11 +36,6 @@ public class MainController {
     public void onCreate() {
         MyActivity.showLoader();
 
-        //La création de ces objets, ce serait bien de ne pas
-        // les réinstancier plusieurs fois.
-        //--> Voir le cours de Génie Logiciel : Singleton()
-        //Pour ceux qui veulent aller plus loin -> Injection de Dépendances
-        //On crée un objet Gson
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();

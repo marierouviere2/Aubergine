@@ -28,9 +28,7 @@ public class RestAOEResponse {
         this.previous = previous;
     }
 
-    public List<AOE> getCivilizations() {
-        return civilizations;
-    }
+    public List<AOE> getCivilizations() { return civilizations; }
 
     public void setCivilizations(List<AOE> civilizations) {
         this.civilizations = civilizations;

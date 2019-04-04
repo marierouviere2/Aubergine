@@ -2,6 +2,7 @@ package com.example.aubergine;
 
 import java.util.List;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +11,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.aubergine.model.AOE;
+import com.example.aubergine.model.OnClick;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+
+    private final OnClick click;
+    private Context context;
+
     private List<AOE> values;
 
     // Provide a reference to the views for each data item
@@ -44,14 +50,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<AOE> myDataset) {
+    public MyAdapter(List<AOE> myDataset, Context context, OnClick click) {
         values = myDataset;
+        this.click = click;
+        this.context = context;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
         View v =
@@ -65,22 +72,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        AOE selectedAOE = values.get(position);
+        final AOE selectedAOE = values.get(position);
         final String name = selectedAOE.getName();
         //final String id = selectedAOE.getId();
+        /*final String expansion = selectedAOE.getExpansion();
+        final String army_type = selectedAOE.getArmy_type();
+        final String team_bonus = selectedAOE.getTeam_bonus();*/
 
         holder.txtHeader.setText(name);
-        //holder.txtId.setText(id);
-        /*holder.txtHeader.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove(position);
-                //Intent randomIntent = new Intent(this, MyTouch.class);
-                //startActivity(randomIntent);
-            }
-        });*/
 
         holder.txtFooter.setText("Civilization :" +name);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                click.onClick(selectedAOE);
+            }
+        });
     }
 
     // Return the size of your dataset (invoked by the layout manager)
