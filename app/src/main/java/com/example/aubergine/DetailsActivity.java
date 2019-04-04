@@ -17,24 +17,25 @@ public class DetailsActivity extends AppCompatActivity {
     private void getIncommingIntent(){
         if(getIntent().hasExtra("name")){
             String nom = getIntent().getStringExtra("name");
-            setTextAOE(nom);
-        }/*
-        if(getIntent().hasExtra("id")){
             String idd = getIntent().getStringExtra(("id"));
-            setTextAOE(idd);
-        }
-        if(getIntent().hasExtra("expansion")){
             String expansion = getIntent().getStringExtra(("expansion"));
-            setTextAOE(expansion);
-        }
-        if(getIntent().hasExtra("army_type")){
             String army = getIntent().getStringExtra(("army_type"));
-            setTextAOE(army);
-        }*/
+            setTextAOE(nom,idd,expansion,army);
+        }
     }
 
-    private void setTextAOE(String nom){
+    private void setTextAOE(String nom,String idd,String expansion,String army){
         TextView nomCiv = findViewById(R.id.name);
         nomCiv.setText(nom);
+
+        TextView iddCiv = findViewById(R.id.idd);
+        iddCiv.setText(idd);
+
+        TextView expCiv = findViewById(R.id.expansion);
+        expCiv.setText(expansion);
+
+        TextView armyCiv = findViewById(R.id.army);
+        armyCiv.setText(army);
+
     }
 }

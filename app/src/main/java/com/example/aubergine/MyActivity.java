@@ -61,9 +61,9 @@ public class MyActivity extends Activity {
 
                 Intent intent = new Intent(getApplicationContext(), DetailsActivity.class);
                 intent.putExtra("name", item.getName());
-                /*intent.putExtra("id", item.getId());
+                intent.putExtra("id", item.getId());
                 intent.putExtra("expansion", item.getExpansion());
-                intent.putExtra("army_type", item.getArmy_type());*/
+                intent.putExtra("army_type", item.getArmy_type());
                 //intent.putExtra("civilization_bonus", item.getCivilization_bonus());
                 //rajouter le reste
                 MyActivity.this.startActivity(intent);
