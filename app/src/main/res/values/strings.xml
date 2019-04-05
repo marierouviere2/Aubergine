@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Aubergine</string>
     <string name="home_text"> Welcome!</string>
+    <string name="army">Army :</string>
+    <string name="expansion">Expansion :</string>
+    <string name="id">ID :</string>
 </resources>
