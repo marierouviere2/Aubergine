@@ -1,5 +1,4 @@
-# Aubergine project :
-# API AOE - Age Of Empire
+# Aubergine project : API AOE - Age Of Empire
 
 ## 1. Présentation Générale
 
@@ -9,18 +8,18 @@ Application mobile réalisée dans le cadre d'un projet en 3ème année à l'*ES
 
 Ce projet comprend les features suivants :
 
-• 3 activités :
+- 3 activités :
 	- **MainActivity** : Affiche l'écran d'accueil
 	- **MyActivity** : Contient la liste des civilisations
 	- **DetailsActivity** : Contient les informations sur la civilisation sélectionnée
-• L'appel vers une **API Rest**.
-• Un RecyclerView pour afficher la liste des civilisations.
+- L'appel vers une **API Rest**.
+- Un RecyclerView pour afficher la liste des civilisations.
 
 Le projet comprend les architectures suivantes :
 
-• **GitFlow**: branches master et developper.
-• Architecture **MVC** (Modèle - Vue - Controlleur).
-• Building l'APK de l'application.
+- **GitFlow**: branches master et developper.
+- Architecture **MVC** (Modèle - Vue - Controlleur).
+- Building l'APK de l'application.
 
 ## 3. Screenshots
 
@@ -31,12 +30,12 @@ Ci-dessous, l'écran d'accueil :
 <img src="https://image.noelshack.com/fichiers/2019/14/5/1554459458-capture-d-ecran-2019-04-05-a-11-51-02.png">
 </p>
 
-Ci dessus, MyActivity (charge le RecyclerView) :
+Ci dessous, MyActivity (charge le RecyclerView) :
 <p align="center">
 <img src="https://image.noelshack.com/fichiers/2019/14/5/1554459458-capture-d-ecran-2019-04-05-a-11-51-13.png">
 </p>
 
-Ci-dessus, DetailsActivity (affiche les informations de la civilisation sélectionnée) :
+Ci-dessous, DetailsActivity (affiche les informations de la civilisation sélectionnée) :
 <p align="center">
 <img src="https://image.noelshack.com/fichiers/2019/14/5/1554459465-capture-d-ecran-2019-04-05-a-11-53-10.png">
 </p>
